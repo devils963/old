@@ -1,7 +1,7 @@
 # SPI-Soccer-Prediction
 
 This program helps to find favorable betting odds on evaluating public SPI-Ratings.
-It is based on the SPI-Ratings of FiveThirtyEight https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv.
+It is based on FiveThirtyEight's SPI-Ratings  (`https://projects.fivethirtyeight.com/soccer-api/club/spi_matches.csv`).
 To make clear this algorithm has no guarantee to succeed but it can provide helpful advise on deciding which bet you should choose.
 
 # How to Setup
