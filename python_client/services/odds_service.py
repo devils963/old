@@ -115,14 +115,11 @@ class Odds_Service:
         path = Path(__file__).parent / "../api-credentials.txt"
         text_file = open(path, "r")
         content = text_file.read()
-        values = content.split(';')
         headers = {
-                'x-rapidapi-host': values[0],
-                'x-rapidapi-key': values[1]
+                'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+                'x-rapidapi-key': content
         }
-        
         return headers
 
 service = Odds_Service()
 service.get_all_fixtures_of_date("2020-01-18")
-
