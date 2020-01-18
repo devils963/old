@@ -22,6 +22,9 @@ To make clear this algorithm has no guarantee to succeed but it can provide help
 5. open the command line and type `cd <example-destination>\spi-soccer-prediction\python_client` (substitute <example-destination> with the location you stored the repo)
 6. type `python main.py` to run the program 
 
+# Credits 
+Data powered by [API-FOOTBALL](https://www.api-football.com/)
+
 
 
 
