@@ -102,3 +102,21 @@ class SPI_Prediction_Service:
         game_dict['winning_side'] = winning_side
         game_dict['winning_side_probability'] = winning_side_probability
         return game_dict
+
+    def compute_game_information_dictionary(self, game, fixture, best_bookmaker):
+        game_information = {}
+        game_information['date'] = game['date']
+        game_information['home'] = game['home']
+        game_information['away'] = game['away']
+        game_information['compared_home'] = fixture['homeTeam']['team_name']
+        game_information['compared_away'] = fixture['awayTeam']['team_name']
+        game_information['minimal_betting_odd'] = game['min_quote']
+        game_information['winning_side'] = game['winning_side']
+        game_information['winning_side_probability'] = game['winning_side_probability']
+        game_information['best_bookmaker'] = best_bookmaker['bookmaker_name']
+        game_information['best_bookmaker_odd'] = best_bookmaker['odd']
+        return game_information
+
+
+
+    

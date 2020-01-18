@@ -8,19 +8,19 @@ from pathlib import Path
 
 class Odds_Service:
     
-    def show_game_information(self, game_to_bet, found_game_on_API):
-        print()
-        print('game:', game_to_bet['home'], game_to_bet['away'], '|compare|' , found_game_on_API['homeTeam']['team_name'], found_game_on_API['awayTeam']['team_name'])
-        print('minimal betting odd:', game_to_bet['min_quote'])
-        print('probability to win this game:', game_to_bet['winning_side_probability'], 'on', game_to_bet['winning_side'])
+    # def show_game_information(self, game_to_bet, found_game_on_API):
+    #     print()
+    #     print('game:', game_to_bet['home'], game_to_bet['away'], '|compare|' , found_game_on_API['homeTeam']['team_name'], found_game_on_API['awayTeam']['team_name'])
+    #     print('minimal betting odd:', game_to_bet['min_quote'])
+    #     print('probability to win this game:', game_to_bet['winning_side_probability'], 'on', game_to_bet['winning_side'])
 
 
-    def show_bookmaker_information(self, bookmaker_name, odd, winning_probability):
-        if bookmaker_name != '':
-            print('best one is ' + bookmaker_name + ' with quote ' + str(odd))
-        else:
-            print('dont work for this game')
-        print()
+    # def show_bookmaker_information(self, bookmaker_name, odd, winning_probability):
+    #     if bookmaker_name != '':
+    #         print('best one is ' + bookmaker_name + ' with quote ' + str(odd))
+    #     else:
+    #         print('dont work for this game')
+    #     print()
 
     def get_all_fixtures_of_date(self, fixture_date):
         limit = self.read_request_limit()
