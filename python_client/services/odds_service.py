@@ -120,6 +120,3 @@ class Odds_Service:
                 'x-rapidapi-key': content
         }
         return headers
-
-service = Odds_Service()
-service.get_all_fixtures_of_date("2020-01-18")
