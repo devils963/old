@@ -1,6 +1,7 @@
 from services.spi_data_loader_service import SPI_Data_Loader_Service
 from services.spi_prediction_service import SPI_Prediction_Service
 from services.odds_service  import Odds_Service
+from services.view_service import View_Service
 import time
 
 spi_data_loader_service = SPI_Data_Loader_Service()
@@ -10,6 +11,7 @@ spi_prediction_service = SPI_Prediction_Service()
 all_games_to_bet_on = spi_prediction_service.get_games_to_bet_this_week()
 
 odds_service = Odds_Service()
+view_service = View_Service()
 
 bettable_games_list = []
 
@@ -23,13 +25,13 @@ for game in all_games_to_bet_on:
             game['min_quote'], game['winning_side'], odds_of_game)
 
         game_information = spi_prediction_service.compute_game_information_dictionary(game, fixture, best_bookmaker)
-
         bettable_games_list.append(game_information)
 
-        # odds_service.show_game_information(game, fixture)
-        # odds_service.show_bookmaker_information(
-        #     best_bookmaker['bookmaker_name'], best_bookmaker['odd'], game['winning_side_probability'])
-
         time.sleep(10)
+
+view_service.show_game_information(bettable_games_list)
+
+
+
 
 
