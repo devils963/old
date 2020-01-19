@@ -5,8 +5,11 @@ from openpyxl import load_workbook
 import os
 from pathlib import Path
 
-
 class SPI_Data_Loader_Service():
+    view_service = None
+
+    def __init__(self, _view_service):
+        self.view_service = _view_service
 
     def update_spi_file(self):
         fetched_data = self.fetch_spi_matches()
@@ -27,13 +30,14 @@ class SPI_Data_Loader_Service():
         return corr_array
 
     def write_to_xlsx_file(self, processed_data):
+        self.view_service.printProgressBar(0, 100, prefix = 'Prepare-Data:', suffix = 'Complete', length = 50)
         path = Path(__file__).parent / "../../spi_data/automated_spi.xlsx"
         workbook = load_workbook(filename = path)
         active_workbook = workbook.active
         for r, row in enumerate(processed_data):
             for c, value in enumerate(row):
                 progress = int((r / len(processed_data))* 100) 
-                print('progress = ' , str(progress) , "%")
+                self.view_service.printProgressBar(progress, 100, prefix = 'Prepare-Data:', suffix = 'Complete', length = 50)
                 active_workbook.cell(row = r+1, column = c+1).value = value
         workbook.save(path)
 

@@ -4,18 +4,17 @@ from services.odds_service  import Odds_Service
 from services.view_service import View_Service
 import time
 
-spi_data_loader_service = SPI_Data_Loader_Service()
+view_service = View_Service()
+spi_data_loader_service = SPI_Data_Loader_Service(view_service)
 spi_data_loader_service.update_spi_file()
-
 spi_prediction_service = SPI_Prediction_Service()
 all_games_to_bet_on = spi_prediction_service.get_games_to_bet_this_week()
-
 odds_service = Odds_Service()
-view_service = View_Service()
+view_service.printProgressBar(0, len(all_games_to_bet_on), prefix = 'Game-Calculation:', suffix = 'Complete', length = 50)
 
 bettable_games_list = []
 
-for game in all_games_to_bet_on:
+for i, game in enumerate(all_games_to_bet_on):
         fixtures_on_date = odds_service.get_all_fixtures_of_date(game['date'])
         not_finished_fixtures = odds_service.filter_on_not_finished(fixtures_on_date)
         fixture = odds_service.get_fixture_from_team_names(
@@ -26,6 +25,8 @@ for game in all_games_to_bet_on:
 
         game_information = spi_prediction_service.compute_game_information_dictionary(game, fixture, best_bookmaker)
         bettable_games_list.append(game_information)
+
+        view_service.printProgressBar(i+1, len(all_games_to_bet_on), prefix = 'Game-Calculation:', suffix = 'Complete', length = 50)
 
         time.sleep(10)
 
