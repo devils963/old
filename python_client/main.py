@@ -7,7 +7,7 @@ import time
 view_service = View_Service()
 spi_data_loader_service = SPI_Data_Loader_Service(view_service)
 spi_data_loader_service.update_spi_file()
-spi_prediction_service = SPI_Prediction_Service()
+spi_prediction_service = SPI_Prediction_Service(view_service)
 all_games_to_bet_on = spi_prediction_service.get_games_to_bet_this_week()
 odds_service = Odds_Service()
 view_service.printProgressBar(0, len(all_games_to_bet_on), prefix = 'Game-Calculation:', suffix = 'Complete', length = 50)
