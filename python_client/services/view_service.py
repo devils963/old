@@ -30,8 +30,8 @@ class View_Service():
                 filtered_game['winning_side_probability'], 'on', filtered_game['winning_side'])
 
             if filtered_game['best_bookmaker'] != '':
-                print('best one is ' + filtered_game +
-                    ' with quote ' + str(filtered_game))
+                print('best one is ' + filtered_game['best_bookmaker'] +
+                    ' with quote ' + str(filtered_game['best_bookmaker_odd']))
             else:
                 print('dont work for this game')
             print()
