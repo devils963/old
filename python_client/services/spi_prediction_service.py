@@ -76,7 +76,7 @@ class SPI_Prediction_Service:
 
     def get_games_to_bet_this_week(self):
         games_to_bet = []
-        self.view_service.printProgressBar(0, 6, prefix = 'Prepare-Data:', suffix = 'Complete', length = 50)
+        self.view_service.print_progress_bar(0, 6, prefix = 'Prepare-Data:', suffix = 'Complete', length = 50)
         for i in range(6):
             min_probability = 0.65 + i * 0.05
             max_probability = 0.7 + i * 0.05
@@ -92,7 +92,7 @@ class SPI_Prediction_Service:
             for game in filtered_games:
                 computed_game = self.compute_game_dictionary(game, min_quote)
                 games_to_bet.append(computed_game)
-        self.view_service.printProgressBar(i+1, 6, prefix = 'Prepare-Data:', suffix = 'Complete', length = 50)
+        self.view_service.print_progress_bar(i+1, 6, prefix = 'Prepare-Data:', suffix = 'Complete', length = 50)
         return games_to_bet
 
     def compute_game_dictionary(self, game, min_quote):
