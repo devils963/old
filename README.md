@@ -24,6 +24,7 @@ To make clear this algorithm has no guarantee to succeed but it can provide help
 
 # Credits 
 Data powered by [API-FOOTBALL](https://www.api-football.com/)
+The data provided by [FiveThirtyEight](https://fivethirtyeight.com/) is under Creative Commons Attribution 4.0 International license and is available [here](https://github.com/fivethirtyeight/data/tree/master/soccer-spi).
 
 
 
