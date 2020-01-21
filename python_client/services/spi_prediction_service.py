@@ -92,7 +92,8 @@ class SPI_Prediction_Service:
             for game in filtered_games:
                 computed_game = self.compute_game_dictionary(game, min_quote)
                 games_to_bet.append(computed_game)
-        self.view_service.print_progress_bar(i+1, 6, prefix = 'Prepare-Data:', suffix = 'Complete', length = 50)
+            self.view_service.print_progress_bar(i+1, 6, prefix = 'Prepare-Data:', suffix = 'Complete', length = 50)
+        
         return games_to_bet
 
     def compute_game_dictionary(self, game, min_quote):

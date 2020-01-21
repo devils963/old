@@ -20,20 +20,21 @@ class View_Service():
         return game_information_list
 
     def print_game_information(self, filtered_games):
-        print()
-        print('date:', filtered_games['date'])
-        print('game:', filtered_games['home'], filtered_games['away'], '|compare|',
-              filtered_games['compared_home'], filtered_games['compared_away'])
-        print('minimal betting odd:', filtered_games['minimal_betting_odd'])
-        print('probability to win this game:',
-              filtered_games['winning_side_probability'], 'on', filtered_games['winning_side'])
+        for filtered_game in filtered_games:
+            print()
+            print('date:', filtered_game['date'])
+            print('game:', filtered_game['home'], filtered_game['away'], '|compare|',
+                filtered_game['compared_home'], filtered_game['compared_away'])
+            print('minimal betting odd:', filtered_game['minimal_betting_odd'])
+            print('probability to win this game:',
+                filtered_game['winning_side_probability'], 'on', filtered_game['winning_side'])
 
-        if filtered_games['best_bookmaker'] != '':
-            print('best one is ' + filtered_games +
-                  ' with quote ' + str(filtered_games))
-        else:
-            print('dont work for this game')
-        print()
+            if filtered_game['best_bookmaker'] != '':
+                print('best one is ' + filtered_game +
+                    ' with quote ' + str(filtered_game))
+            else:
+                print('dont work for this game')
+            print()
 
     def print_progress_bar(self, iteration, total, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
         percent = ("{0:." + str(decimals) + "f}").format(100 *
