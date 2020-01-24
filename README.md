@@ -23,7 +23,7 @@ To make clear this algorithm has no guarantee to succeed but it can provide help
 6. type `python main.py` to run the program 
 
 # Credits 
-Data powered by [API-FOOTBALL](https://www.api-football.com/)
+Data powered by [API-FOOTBALL](https://www.api-football.com/).
 The data provided by [FiveThirtyEight](https://fivethirtyeight.com/) is under Creative Commons Attribution 4.0 International license and is available [here](https://github.com/fivethirtyeight/data/tree/master/soccer-spi).
 
 
