@@ -37,3 +37,8 @@ for i, game in enumerate(all_games_to_bet_on):
     time.sleep(10)
 
 view_service.show_game_information(bettable_games_list)
+
+print('under the assumption that you bet one Euro on every game , you can expect to win: ')
+
+print(spi_prediction_service.calculate_expectation_value(bettable_games_list))
+

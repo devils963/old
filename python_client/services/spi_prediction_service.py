@@ -125,6 +125,21 @@ class SPI_Prediction_Service:
         game_information['best_bookmaker_odd'] = best_bookmaker['odd']
         return game_information
 
+    def calculate_expectation_value(self, bettable_games):
+        expectation_value = 0
+        excluded_array = self.exclude_not_working_games()
+        for game in bettable_games:
+            current_expectation_value = (float(game['winning_side_probability']) * 1) + (1- float(game['winning_side_probability']) * -1)
+            expectation_value = expectation_value + current_expectation_value
+        return expectation_value
+
+    def exclude_not_working_games(self, bettable_games):
+        excluded_array = []
+        for game in bettable_games:
+            if filtered_game['best_bookmaker'] != '':
+                excluded_array.append(game)
+        return excluded_array
+
 
 
     
