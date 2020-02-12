@@ -127,7 +127,7 @@ class SPI_Prediction_Service:
 
     def calculate_expectation_value(self, bettable_games):
         expectation_value = 0
-        excluded_array = self.exclude_not_working_games()
+        excluded_array = self.exclude_not_working_games(bettable_games)
         for game in bettable_games:
             current_expectation_value = (float(game['winning_side_probability']) * 1) + (1- float(game['winning_side_probability']) * -1)
             expectation_value = expectation_value + current_expectation_value
