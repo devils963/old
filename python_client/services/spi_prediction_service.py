@@ -136,7 +136,7 @@ class SPI_Prediction_Service:
     def exclude_not_working_games(self, bettable_games):
         excluded_array = []
         for game in bettable_games:
-            if filtered_game['best_bookmaker'] != '':
+            if game['best_bookmaker'] != '':
                 excluded_array.append(game)
         return excluded_array
 
