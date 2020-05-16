@@ -13,7 +13,7 @@ To make clear this algorithm has no guarantee to succeed but it can provide help
 ## Steps to Setup
 1. Clone this repository to your destination of choice (example-destination : C:\Users\Public\Documents)
 2. Navigate to <example-destination>\spi-soccer-prediction\python_client
-3. Create a file called `api-credentials.txt` (important: name it exactly this)
+3. Create a file called `api-credentials.txt` (important: name it exactly this way)
 4. put your Rapid-Api-Key in this document.
     1. If you dont have one go to `https://rapidapi.com/api-sports/api/api-football/pricing`
     2. Select the free plan
